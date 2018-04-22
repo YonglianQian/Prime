@@ -19,5 +19,6 @@ namespace WebApplication0419Home
             WebService1 service = new WebService1();
             Response.Write("<script>alert('" + service.HelloWorld() + "')</script>");
         }
+
     }
 }
