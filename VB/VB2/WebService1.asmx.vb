@@ -18,15 +18,16 @@ Public Class WebService1
 
 
     <WebMethod()>
-    Public Function SearchFoods(ByVal prefixText As String, ByVal count As Integer) As List(Of String)
+    Public Function SearchFoods(ByVal prefixText As String, ByVal count As Integer, ByVal contextKey As Integer) As List(Of String)
         Dim lstfoods As List(Of String) = New List(Of String)
         Dim connectionstring As String = "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DataStore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
         Using conData As SqlConnection = New SqlConnection(connectionstring)
             conData.Open()
-            Dim strSQL As String = "EXEC kd_selFoodItemsSearch @OrgID,@SearchText ='" & prefixText & "'"
+            'Dim strSQL As String = "EXEC kd_selFoodItemsSearch @OrgID,@SearchText ='" & prefixText & "'"
+            Dim strSQL As String = "EXEC kd_selFoodItemsSearch @OrgID,@SearchText"
             Dim cmd As SqlCommand = New SqlCommand
             cmd.CommandText = strSQL
-            cmd.Parameters.AddWithValue("@OrgID", 0)
+            cmd.Parameters.AddWithValue("@OrgID", contextKey)
             cmd.Parameters.AddWithValue("@SearchText", prefixText)
             cmd.Connection = conData
             Dim sdr As SqlDataReader = cmd.ExecuteReader

@@ -54,10 +54,20 @@
         </div>
         <br />
 
-        <div>调用WCF服务</div>
+        
+
+
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <div>调用WCF服务</div>
         <label>输入名字参数</label>
         <input id="Text1" type="text" />
         <input id="Button2" type="button" value="点击调用" onclick="HelloWorld();"/>
+
+            </ContentTemplate>
+            
+
+        </asp:UpdatePanel>
     </form>
 </body>
 </html>
