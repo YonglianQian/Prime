@@ -14,9 +14,9 @@
 
         .travelerlink  a{
             text-align: right;
-            -webkit-text-decoration-color: yellow;
-            -moz-text-decoration-color: yellow;
-            text-decoration-color: yellow;
+            -webkit-text-decoration-color:#4cff00;
+            -moz-text-decoration-color: #4cff00;
+            text-decoration-color: #4cff00;
 
         }
 
