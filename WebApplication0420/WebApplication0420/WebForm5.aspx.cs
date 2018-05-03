@@ -19,6 +19,7 @@ namespace WebApplication0420
         {
             string value1 = this.hf1.Value;
             string v = this.Select1.Value;
+            string result = value1 + v;
         }
 
     }

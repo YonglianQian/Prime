@@ -35,6 +35,8 @@ namespace WebApplication0419Home
             data.Add("adc,beijing,5@yy,6");
             data.Add("ap,shanghai,7@yy,8");
             data.Add("apc,wuxi,5@yy,9");
+            data.Add("fa,wuxi,5@qq,9");
+            data.Add("fat,shagnhai,2@qq,8");
             return data.Where(p => p.StartsWith(prefixText)).ToList();
         }
 

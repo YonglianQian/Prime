@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <script type="text/javascript">
+ <%--   <script type="text/javascript">
         function OnKeyDown() {
             var ddl = document.getElementById("<%=DropDownList1.ClientID %>");
             var ac = document.getElementById("<%=aceFoodSearch.ClientID %>");
@@ -17,18 +17,18 @@
                 ac.set_contextKey(text);
             }
         }
-    </script>
+    </script>--%>
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div>
             <asp:Label ID="LblAddFoods" runat="server" Text="Enter food name to search" CssClass="Show"></asp:Label>
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <%--<asp:DropDownList ID="DropDownList1" runat="server">
                 <asp:ListItem>0</asp:ListItem>
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
-            </asp:DropDownList>
+            </asp:DropDownList>--%>
             <asp:TextBox ID="txtFoodSearch" runat="server" onkeydown="return OnKeyDown();"></asp:TextBox>
             <asp:AutoCompleteExtender ID="aceFoodSearch" runat="server"
                 ServiceMethod="SearchFoods"
