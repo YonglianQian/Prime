@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace WebApplication0503 {
+namespace WCF0503 {
     
     
     public partial class WebForm1 {

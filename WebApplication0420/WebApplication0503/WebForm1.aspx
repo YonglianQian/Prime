@@ -7,25 +7,34 @@
     <title></title>
     <script src="Scripts/jquery-3.3.1.js"></script>
     <script type="text/javascript">
-        function callbackresult(result) {
-            console.log(result);
-        };
-        $(function(){
-            WebService1.HelloWorld(callbackresult)
-        });
+        $(function () {
+            $.ajax({
+                url: 'WebService1.asmx/GetData',
+                type: 'post',
+                data: '',
+                dataType: 'json',
+
+                success: function (result) {
+                    $.each(result, function (i, o) {
+                        $("#main").append("Name: " + o["Name"] + "<br>");
+                        $("#main").append("Price: " + o["Price"] + "<br>");
+                    }
+                    )
+                }
+
+            })
+
+        })
+
 
     </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-            <Services>
-                <asp:ServiceReference Path="~/WebService1.asmx" />
-            </Services>
-        </asp:ScriptManager>
-
-        <div>
+        <div id="main">
         </div>
+        前后端调用WebService
     </form>
 </body>
 </html>

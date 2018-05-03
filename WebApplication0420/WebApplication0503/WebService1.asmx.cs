@@ -21,7 +21,7 @@ namespace WebApplication0503
     {
 
         [WebMethod]
-        public string HelloWorld()d
+        public string HelloWorld()
         {
             return "Hello World";
         }
