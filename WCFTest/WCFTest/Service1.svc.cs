@@ -21,7 +21,6 @@ namespace WCFTest
         {
         }
 
-        [webget]
         public List<Product> GetProducts()
         {
             throw new NotImplementedException();

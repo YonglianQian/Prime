@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WCF0503.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WCF0503.WebForm1" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -44,6 +44,9 @@
         <div id="main">
 
         </div>
+        <asp:TextBox runat="server" id="textbox1"/>
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+
     </form>
 </body>
 </html>
