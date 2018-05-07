@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm6.aspx.cs" Inherits="WebApplication0430.WebForm6" %>
 
+<%@ Register Src="~/WebUserControl3.ascx" TagPrefix="uc1" TagName="WebUserControl3" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,6 +17,7 @@
                     <asp:TemplateField HeaderText="ID" SortExpression="Id">
                         <ItemTemplate>
                             <asp:HiddenField ID="HiddenField1" runat="server" Value='<%# Bind("Id") %>' />
+                            <uc1:WebUserControl3 runat="server" ID="WebUserControl3" Text="label" EventSecret=<%# Bind("Id") %>/>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Name" SortExpression="Name">
