@@ -80,6 +80,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="WebUserControl3.ascx" />
     <None Include="packages.config" />
     <Content Include="Product.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -260,6 +261,13 @@
     </Compile>
     <Compile Include="WebUserControl2.ascx.designer.cs">
       <DependentUpon>WebUserControl2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControl3.ascx.cs">
+      <DependentUpon>WebUserControl3.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl3.ascx.designer.cs">
+      <DependentUpon>WebUserControl3.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
