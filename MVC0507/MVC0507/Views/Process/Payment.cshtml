@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Payment";
+}
+
+<h2>Payment</h2>
+
+
+<button id="button1">点击跳转</button>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        $("#button1").click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: "Payment",
+                method: "post",
+                data: '1',
+                dataType: "json",
+                done: function (data) {
+                    window.location.href(data.newUrl);
+                    alert(data);
+                },
+                error: function () {
+                    alert("Ajax call failed");
+                }
+            })
+        })
+    })
+
+
+</script>
+

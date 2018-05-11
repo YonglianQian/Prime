@@ -1,0 +1,23 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="VB1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="border: 1px solid #b6ff00; margin: 10px;">
+            <h3>MasterPage</h3>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <asp:Button ID="IbnHome" runat="server" Text="IbnHome" />
+            <asp:Button ID="IbnHelp" runat="server" Text="IbnHelp" />
+        </div>
+    </form>
+</body>
+</html>

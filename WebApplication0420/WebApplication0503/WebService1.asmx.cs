@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -41,10 +40,11 @@ namespace WebApplication0503
 
             };
 
-            string json = JsonConvert.SerializeObject(products);
+            //string json = JsonConvert.SerializeObject(products);
 
 
-            Context.Response.Write(json);
+            //Context.Response.Write(json);
+
         }
     }
 }
