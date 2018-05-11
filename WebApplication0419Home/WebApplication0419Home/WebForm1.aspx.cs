@@ -17,7 +17,9 @@ namespace WebApplication0419Home
         protected void Button1_Click(object sender, EventArgs e)
         {
             WebService1 service = new WebService1();
-            Response.Write("<script>alert('" + service.HelloWorld() + "')</script>");
+            //Response.Write("<script>alert('" + service.HelloWorld() + "')</script>");
+            ClientScript.RegisterStartupScript(this.GetType(), "", "<script>alert('"+service.HelloWorld()+"')</script>");
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "", "<script>alert('"+service.HelloWorld()+"')</script>",false);
         }
 
     }

@@ -23,19 +23,9 @@
         }
 
 
-        function show(s, e) {
-            alert(s);
-            alert(e);
-        }
 
 
-
-
-
-
-
-
-
+        //WCF函数
         function HelloWorld() {
             var result = $("#Text1").val();
             Service1.HelloWorld(result, helloWorldCallback);
@@ -54,11 +44,11 @@
                 <asp:ServiceReference Path="~/Service1.svc" />
             </Services>
         </asp:ScriptManager>
-        <div>
 
+
+        <div>
             <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
             <br />
-
             <hr style="color: red; background-color: darkred" />
             <br />
             <div>
@@ -82,7 +72,6 @@
                 <input id="Button2" type="button" value="点击调用" onclick="HelloWorld();" />
 
             </ContentTemplate>
-
 
         </asp:UpdatePanel>
     </form>
