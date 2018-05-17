@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ketodocs\slides\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -104,7 +105,9 @@
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="WebForm3.aspx" />
+    <Content Include="WebForm4.aspx" />
     <Content Include="WebService1.asmx" />
+    <Content Include="WebService2.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.vb">
@@ -150,8 +153,19 @@
       <DependentUpon>WebForm3.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="WebForm4.aspx.designer.vb">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm4.aspx.vb">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="WebService1.asmx.vb">
       <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebService2.asmx.vb">
+      <DependentUpon>WebService2.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

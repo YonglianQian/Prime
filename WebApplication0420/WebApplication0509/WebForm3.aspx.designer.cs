@@ -10,7 +10,7 @@
 namespace WebApplication0509 {
     
     
-    public partial class WebForm1 {
+    public partial class WebForm3 {
         
         /// <summary>
         /// form1 control.
@@ -22,12 +22,12 @@ namespace WebApplication0509 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Button1 control.
+        /// WebUserControl2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::WebApplication0509.WebUserControl2 WebUserControl2;
     }
 }

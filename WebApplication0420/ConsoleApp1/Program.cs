@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,55 +12,49 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            String startPlusText = " is or are"; //
-            String tableText = " table(s)";
-            String tableTextPlus = " on the table";
-            String chairText = " chair";
-            String chairTextPlus = " at the chair";
-            var typeCount = 0;
 
-            StringBuilder strBuild = new StringBuilder();
-            StringBuilder strBuildPlus = new StringBuilder();
-            string strPer="", strPerPlus="";
+            List<string> strlist = new List<string>()
+         {
+             "abcd",
+             "10",
+             "3",
+             "16",
+             "9"
+         };
+            //string[] arr = strlist.ToArray();
+            //Array.Sort(arr, new Customcomparer());
+            // string[] arr = strlist.ToArray();
+            //Array.Sort(arr,new Customcomparer());
+
+            var re = strlist.OrderBy(p => p, new Comparer1()).ToList();
 
 
-            bool something = true;
-            bool somthingEsle = true;
-            bool isFirst = true;
 
-            if (something == true)
+
+            foreach (var item in re)
             {
-                typeCount++;
-                if (somthingEsle == true)
-                {
-                    typeCount++;
-                    if (isFirst)
-                    {
-                        isFirst = false;
-                        strBuild.Append(tableText);
-                        strBuildPlus.Append(startPlusText);
-                        strBuildPlus.Append(tableTextPlus);
-                        if (typeCount == 2)
-                        {
-                            strBuild.Append(", and ");
-                            strBuildPlus.Append("(s), ");
-                        }
-                        //else if (typeCount - 1 == 0) //last one
-                        //{
-                        //    strBuildPlus.Append(", ");
-
-                        //}
-                        //typeCount = typeCount - 1;
-
-                        strBuild.Append(chairText);
-                        strBuildPlus.Append(chairTextPlus);
-                        strPer = strBuild.ToString();
-                        strPerPlus = strBuildPlus.ToString();
-                    }
-                }
+                Console.WriteLine(item);
             }
-            Console.WriteLine(strPer);
-            Console.WriteLine(strPerPlus);
+
+
         }
     }
+    public class Comparer1 : IComparer<string>
+    {
+        public int Compare(string x, string y)
+        {
+            if (x=="abcd"||y=="abcd")
+            {
+                return 0;
+            }
+            else
+            {
+                int a = int.Parse(x);
+                int b = int.Parse(y);
+                return a.CompareTo(b);
+            }
+            
+        }
+    }
+
 }

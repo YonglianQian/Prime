@@ -7,17 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication0509
 {
-    public partial class WebUserControl1 : System.Web.UI.UserControl
+    public partial class WebForm3 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Label1.Text = Myproperty;
-        }
-        public string Myproperty { get; set; }
 
-        protected void Page_PreRender(object sender,EventArgs e)
-        {
-            
         }
     }
 }

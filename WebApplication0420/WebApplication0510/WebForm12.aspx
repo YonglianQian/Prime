@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WebForm3.aspx.vb" Inherits="VB2.WebForm3" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm12.aspx.cs" Inherits="WebApplication0510.WebForm12" %>
 
 <!DOCTYPE html>
 
@@ -11,6 +11,7 @@
         <div>
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </div>
+
     </form>
 </body>
 </html>
