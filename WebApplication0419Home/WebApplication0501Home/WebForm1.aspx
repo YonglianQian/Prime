@@ -27,15 +27,6 @@
             </Services>
         </asp:ScriptManager>
      
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
-                    <asp:Label Text="Date" runat="server" ID="label1" /><br />
-                </ContentTemplate>
-                <Triggers>
-                    <asp:AsyncPostBackTrigger ControlID="Button1" />
-                </Triggers>
-            </asp:UpdatePanel>
-            <asp:Button Text="Click to Update" runat="server" OnClick="Button1_Click" ID="Button1" /><br />
 
         </div>
 

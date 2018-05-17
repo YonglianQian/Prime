@@ -2,7 +2,7 @@
 
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
     SelectCommand="GetEventBySecret" SelectCommandType="StoredProcedure" 
-    UpdateCommand="UpdateEvent [EventId]=@EventId,[EventName]=@EventName,[EventSecret]=@EventSercret,[JustABit]=@JustABit" UpdateCommandType="StoredProcedure">
+    UpdateCommand="UpdateEvent" UpdateCommandType="StoredProcedure">
     <SelectParameters>
         <asp:Parameter Name="EventId" DbType="Guid" />
     </SelectParameters>
@@ -43,10 +43,10 @@
         </asp:TemplateField>
         <asp:TemplateField HeaderText="JustAbit" SortExpression="JustAbit">
             <EditItemTemplate>
-                <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Eval("JustAbit").ToString().Equals("1") %>' />
+                <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Eval("JustABit").ToString().Equals("1") %>' />
             </EditItemTemplate>
             <ItemTemplate>
-                <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Eval("JustAbit").ToString().Equals("1") %>' Enabled="false" />
+                <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Eval("JustABit").ToString().Equals("1") %>' Enabled="false" />
             </ItemTemplate>
         </asp:TemplateField>
         <asp:CommandField ShowEditButton="True" />

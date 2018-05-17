@@ -14,11 +14,19 @@
             console.log(s);
             console.log(e);
             $("#AutoCompleteExtender1_completionListElem li").each(function (i) {
+                debugger;
                 //var result = $(this).text();
                 //var array = result.split(',');
                 //array.splice(2, 1);
                 //var result1 = array.join(',');
                 //$(this).text(result1);
+                var arr=$.map($(this).text().split(','), function (e, i) {
+                    if (i != 2) {
+                        return e;
+                    }
+                })
+                $(this).text(arr.join(','));
+
             });
         }
 

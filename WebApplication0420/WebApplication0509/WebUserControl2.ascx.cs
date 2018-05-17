@@ -17,15 +17,15 @@ namespace WebApplication0509
 
         protected void DetailsView1_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
         {
-            Response.Write("detailsView_itemupdating<br>");
             Response.Write("Please run"); //I do not run, why is that? help
             SqlDataSource1.UpdateParameters["EventId"].DefaultValue = Guid.Parse("cbd7084f-75bc-446d-a476-171d34830595").ToString();
-
             SqlDataSource1.UpdateParameters["EventName"].DefaultValue = ((TextBox)DetailsView1.FindControl("TextBox1")).Text;
             SqlDataSource1.UpdateParameters["EventSecret"].DefaultValue = ((TextBox)DetailsView1.FindControl("TextBox2")).Text;
-            SqlDataSource1.UpdateParameters["JustAbit"].DefaultValue = ((CheckBox)DetailsView1.FindControl("CheckBox1")).Text;
+            SqlDataSource1.UpdateParameters["JustABit"].DefaultValue = ((CheckBox)DetailsView1.FindControl("CheckBox1")).Text;
             SqlDataSource1.Update();
             DetailsView1.DataBind();
         }
+
+   
     }
 }
