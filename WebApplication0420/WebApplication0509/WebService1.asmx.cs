@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.Script.Services;
 using System.Web.Services;
-using WebApplication0503.Models;
 
-namespace WebApplication0503
+namespace WebApplication0509
 {
     /// <summary>
     /// Summary description for WebService1
-    /// </summary>  
+    /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
@@ -19,29 +19,28 @@ namespace WebApplication0503
     [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
-
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
-        [WebMethod]
+        //[ScriptMethod(ResponseFormat=ResponseFormat.Json)]
         public void GetData()
         {
             Context.Response.Clear();
             Context.Response.ContentType = "application/json";
-
-            List<Product> products = new List<Product>()
+            List<DataClass> data = new List<DataClass>()
             {
-                new Product{Id=1,Name="Apple",Price=10}
-                ,new Product{Id=2,Name="Pear",Price=12}
-                ,new Product{Id=3,Name="Peach",Price=11}
-
+                new DataClass{y="2013-05-24",Points=4},
+                new DataClass{y="2013-05-25",Points=5},
+                new DataClass{y="2013-05-26",Points=6 },
+                new DataClass{y="2013-05-27",Points=7 }
             };
-            string json = JsonConvert.SerializeObject(products);
-            Context.Response.Write(products);
-
+            string json = new JavaScriptSerializer().Serialize(data);
+            Context.Response.Write(json);
+            //return json;
         }
     }
+    public class DataClass
+    {
+        public string y { get; set; }
+        public int Points { get; set; }
+    }
+        
 }
