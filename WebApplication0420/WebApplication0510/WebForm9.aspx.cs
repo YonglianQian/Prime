@@ -11,12 +11,14 @@ namespace WebApplication0510
 {
     public partial class WebForm9 : System.Web.UI.Page
     {
-        
-    protected void Page_Load(object sender, EventArgs e)
+
+        protected void Page_Load(object sender, EventArgs e)
         {
-            this.GridView1.DataSource = GetDataTable();
-            this.GridView1.DataBind();
-            
+            if (!IsPostBack)
+            {
+                this.GridView1.DataSource = GetDataTable();
+                this.GridView1.DataBind();
+            }
         }
         public DataTable GetDataTable()
         {
@@ -45,22 +47,20 @@ namespace WebApplication0510
             List<string> strlist = new List<string>();
             foreach (DataColumn item in dt.Columns)
             {
-            strlist.Add(item.ColumnName);
+                strlist.Add(item.ColumnName);
             }
+            //foreach (var item in dt.Columns)
+            //{
+            //    strlist.Add(item.)
+            //}
 
-            string[] arr = strlist.ToArray();
-            Array.Sort(arr, new customComparer());
-            
-            
 
 
-            //dt = SetColumnOrder(dt, arr);
-            dt=SetColumnOrder(dt, strlist.OrderBy(p => p.Normalize(), new customComparer()).ToArray());
+            dt = SetColumnOrder(dt, strlist.OrderBy(p => p, new customComparer()).ToArray());
             this.GridView1.DataSource = dt;
             this.GridView1.DataBind();
         }
-       
-        public  DataTable SetColumnOrder(DataTable dt,params string[] columnNames)
+        public DataTable SetColumnOrder(DataTable dt, params string[] columnNames)
         {
             int columnIndex = 0;
             foreach (var columnName in columnNames)
@@ -75,25 +75,27 @@ namespace WebApplication0510
     {
         public int Compare(string x, string y)
         {
-            if (x == "Student Number" || y== "Student Number")
+            if (x != "Student Number" && y != "Student Number")
             {
-                return 1;
+                int a = int.Parse(x);
+                int b = int.Parse(y);
+                return a.CompareTo(b);
             }
             else
             {
-                int x1 = Convert.ToInt32(x);
-                int y1 = Convert.ToInt32(y);
-                if (x1 > y1)
-                {
-                    return 1;
-                }
-                else
+                if (x == "Student Number" && y != "Student Number")
                 {
                     return -1;
                 }
+                if (x != "Student Number" && y == "Student Number")
+                {
+                    return 1;
+                }
+
+                return 0;
             }
         }
     }
-    
+
 
 }

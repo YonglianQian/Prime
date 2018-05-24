@@ -13,10 +13,12 @@
         $(function () {
             $.ajax({
                 url: "WebService1.asmx/GetData",
-                type: 'post',
-                data: '',
+                type: 'Post',
+                data: "{'s1':'2015-03-25','s2':'2015-03-26'}",
                 datatype: 'json',
-                success: function (result1) {
+                contentType:"application/json",
+                success: function (result) {
+                    var result1 = eval("(" + result.d + ")");
                     var line = new Morris.Line({
                         element: 'myfirstchart',
                         resize: true,
@@ -27,6 +29,7 @@
                         lineColors: ['#3c8dbc'],
                         hideHover: 'auto'
                     });
+                    $("#title").text(result1[0].Title);
                 }
             })
         })
@@ -34,7 +37,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-            <div id="myfirstchart" style="height: 250px;" class="graph"></div>
+        <div id="title" style="text-align:center;font-style:oblique;"></div>
+        <div id="myfirstchart" style="height: 250px;" class="graph"></div>
     </form>
 
 </body>
