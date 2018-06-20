@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMapNode>
+  <title>Intro</title>
+  <description>introo</description>
+  <type>intro</type>
+  <siteMapNode>
+    <title>Welcome</title>
+    <description>Landing Page</description>
+    <url>/Default.aspx</url>
+  </siteMapNode>
+  <siteMapNode>
+    <title>About Us</title>
+    <description>What/Who are We</description>
+    <url>/About.aspx</url>
+  </siteMapNode>
+</siteMapNode>

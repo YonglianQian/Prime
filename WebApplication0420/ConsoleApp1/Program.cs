@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
@@ -14,61 +15,27 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            List<string> strlist = new List<string>()
-         {
-             "abcd",
-             "10",
-             "3",
-             "16",
-             "9",
-
-         };
-            //string[] arr = strlist.ToArray();
-            //Array.Sort(arr, new Customcomparer());
-            // string[] arr = strlist.ToArray();
-            //Array.Sort(arr,new Customcomparer());
-
-            //var re = strlist.OrderBy(p => p, new Comparer1()).ToList();
-            //string[] arr = strlist.ToArray();
-            //Array.Sort(arr, new Comparer1());
-
-            var arr = strlist.OrderBy(p => p, new Comparer1());
-
-
-
-            foreach (var item in arr)
+            DirectoryInfo di = new DirectoryInfo(@"D:\");
+            foreach (var item in di.GetFiles("*.css"))
             {
-                Console.WriteLine(item);
+                StringBuilder sb = new StringBuilder();
+                using (StreamReader sr = new StreamReader(item.FullName))
+                {
+                    Regex regex = new Regex(@"\b\d{1,3}rpx");
+                    sb.Append(regex.Replace(sr.ReadToEnd(), new MatchEvaluator(m => 
+                        string.Concat(Convert.ToInt32(m.Value.Split('r')[0]) / 2, m.Value.Split('r')[1])
+                    )));
+                }
+                using (StreamWriter sw = new StreamWriter(item.FullName))
+                {
+                    sw.Write(sb.ToString());
+                }
+                Console.WriteLine("{0} Done!", item.Name);
             }
 
+            Console.ReadKey();
         }
     }
-    public class Comparer1 : IComparer<string>
-    {
-        public int Compare(string x, string y)
-        {
 
-            if (x != "abcd" && y != "abcd")
-            {
-                int a = int.Parse(x);
-                int b = int.Parse(y);
-                return a.CompareTo(b);
-            }
-            else
-            {
-                if (x == "abcd" && y != "abcd")
-                {
-                    return -1;
-                }
-                if (x != "abcd" && y == "abcd")
-                {
-                    return 1;
-                }
-
-                return 0;
-            }
-
-        }
-}
-
+ 
 }

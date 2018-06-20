@@ -1,0 +1,8 @@
+﻿<parent>
+  <child>
+    <node id="1" attribute="True">
+    </node >
+    <node id="2" attribute="False">
+    </node >
+  </child>
+</parent>
