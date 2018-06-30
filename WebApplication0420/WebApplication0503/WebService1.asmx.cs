@@ -40,7 +40,7 @@ namespace WebApplication0503
 
             };
             string json = JsonConvert.SerializeObject(products);
-            Context.Response.Write(products);
+            Context.Response.Write(json);
 
         }
     }

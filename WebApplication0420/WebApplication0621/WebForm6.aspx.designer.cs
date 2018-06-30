@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication0612 {
+namespace WebApplication0621 {
     
     
-    public partial class WebForm12 {
+    public partial class WebForm6 {
         
         /// <summary>
         /// form1 control.
