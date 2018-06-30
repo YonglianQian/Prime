@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#table1').DataTable({
+                //"processing" : true,//显示“处理中...” 
+                //"serverSide" : true,//开启服务器模式。 
+                "ajax": {
+                    "url": "/Home/GetData",
+                    "type":"Get"
+                },
+                "sAjaxDataProp": "",
+                "columns": [
+                    { "data": "Id" },
+                    { "data": "Name" },
+                    { "data": "Price" },
+                ]
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div> 
+        <table id="table1" class="display">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+</html>

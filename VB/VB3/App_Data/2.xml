@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<Bud_List>
+  <Budget Account="3030-00" Sequence="3030" Dept="00" Description="BUILDING MAINTENANCE" Type="2" MS=" " EjGr="G"/>
+  <Budget Account="2200-00" Sequence="3030" Dept="00" Description="COMMUNICATIONS" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="1140-00" Sequence="3030" Dept="00" Description="DOUBLETIME PAY" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="3010-00" Sequence="3030" Dept="00" Description="EQUIPMENT REPAIRS" Type="2" MS="M" EjGr=" "/>
+  <Budget Account="4040-00" Sequence="3030" Dept="00" Description="FERTILIZERS &amp; NUTRIENTS" Type="2" MS="S" EjGr=" "/>
+  <Budget Account="2400-00" Sequence="3030" Dept="00"  Description="FREIGHT &amp; POSTAGE" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="4010-00" Sequence="3030" Dept="00"  Description="FUNGICIDES" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="3020-00" Sequence="3030" Dept="00"  Description="GROUNDS MAINTENANCE" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="1300-00" Sequence="3030" Dept="00"  Description="GROUP HEALTH INSURANCE" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="4020-00" Sequence="3030" Dept="00"  Description="HERBICIDES" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="5060-00" Sequence="3030" Dept="00"  Description="IRRIGATION WATER" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="1150-00" Sequence="3030" Dept="00"  Description="OTHER PAY" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="1130-00" Sequence="3030" Dept="00"  Description="OVERTIME PAY" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="1200-00" Sequence="3030" Dept="00"  Description="PAYROLL TAXES" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="4030-00" Sequence="3030" Dept="00"  Description="PESTICIDES" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="1120-00" Sequence="3030" Dept="00"  Description="REGULAR PAY" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="1110-00" Sequence="3030" Dept="00"  Description="SALARIES" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="2100-00" Sequence="3030" Dept="00"  Description="SECURITY SERVICE" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="2500-00" Sequence="3030" Dept="00"  Description="STATE SALES TAX" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="5010-00" Sequence="3030" Dept="00"  Description="SYSTEM PARTS" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="2300-00" Sequence="3030" Dept="00"  Description="UTILITIES" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="5050-00" Sequence="3030" Dept="00"  Description="WATER TREATMENT" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="5030-00" Sequence="3030" Dept="00"  Description="WELL &amp; PUMP REPAIR" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="1400-00" Sequence="3030" Dept="00"  Description="WORKMANS COMP INSURANCE" Type="2" MS=" " EjGr=" "/>
+  <Budget Account="4122A" Sequence="224122" Dept="20" Description="New 3122a" Type="2" MS="M" EjGr=" "/>
+  <Budget Account="1470-0A" Sequence="3100" Dept="30" Description="new 3A470a" Type="2" MS="M" EjGr=" "/>
+  <Budget Account="1470-01" Sequence="3201" Dept="40" Description="nw 1470-01" Type="2" MS=" " EjGr=" "/>
+</Bud_List>

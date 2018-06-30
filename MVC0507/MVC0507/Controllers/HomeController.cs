@@ -187,5 +187,17 @@ namespace MVC0507.Controllers
         {
             throw new NotImplementedException();
         }
+
+        public JsonResult GetData()
+        {
+            List<Product> products = new List<Product>()
+            {
+                new Product{ID=1,Name="Apple",Price=12 },
+                new Product{ID=2,Name="Pear",Price=13 },
+                new Product{ID=3,Name="Grape",Price=14 }
+            };
+            return Json(products, JsonRequestBehavior.AllowGet);
+        }
+        
     }
 }

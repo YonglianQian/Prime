@@ -10,18 +10,17 @@
         $(function () {
             $.ajax({
                 url: 'WebService1.asmx/GetData',
-                type: 'post',
+                type: 'Post',
                 data: '',
                 dataType: 'json',
-
                 success: function (result) {
+                    debugger;
                     $.each(result, function (i, o) {
                         $("#main").append("Name: " + o["Name"] + "<br>");
                         $("#main").append("Price: " + o["Price"] + "<br>");
                     }
                     )
                 }
-
             })
 
         })

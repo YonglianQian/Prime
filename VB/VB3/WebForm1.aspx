@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm12.aspx.cs" Inherits="WebApplication0612.WebForm12" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WebForm1.aspx.vb" Inherits="VB3.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -9,9 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
         </div>
-
     </form>
 </body>
 </html>

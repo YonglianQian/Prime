@@ -10,29 +10,21 @@
     <div>@item.Name</div>
     <h3>@item.Price</h3>
 }
-<button  id="button1">点击跳转</button>
+<button id="button1">点击跳转</button>
+<div id="div1">
 
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-<script type="text/javascript">
+</div>
+<table id="Table1" class="display" width="100%"></table>
 
+
+<link rel="stylesheet" type="text/css" href="~/Scripts/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="~/Scripts/jquery.dataTables.js"></script>
+<script>
     $(function () {
-        $("#button1").click(function (e) {
-            e.preventDefault();
-            $.ajax({
-                url: "Process/Payment",
-                method: "Get",
-                data: '',
-                dataType: "json",
-                done: function (data) {
-                    window.location.href(data.newUrl);
-                    alert(data);
-                },
-                error: function () {
-                    alert("Ajax call failed");
-                }
-            })
-        })
-    })
-
-
+        $("#Table1").DataTable({
+            "ajax": {
+                "url": "/Home/GetData",
+            }
+        });
+    });
 </script>
