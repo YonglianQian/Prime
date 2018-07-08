@@ -16,15 +16,15 @@
     <script>
         $(document).ready(function () {
             $('#table1').DataTable({
-                //"processing" : true,//显示“处理中...” 
-                //"serverSide" : true,//开启服务器模式。 
+                //"processing" : true, 
+                //"serverSide" : true,
                 "ajax": {
                     "url": "/Home/GetData",
                     "type":"Get"
                 },
                 "sAjaxDataProp": "",
                 "columns": [
-                    { "data": "Id" },
+                    { "data": "ID" },
                     { "data": "Name" },
                     { "data": "Price" },
                 ]
@@ -38,7 +38,7 @@
         <table id="table1" class="display">
             <thead>
                 <tr>
-                    <th>Id</th>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Price</th>
                 </tr>
