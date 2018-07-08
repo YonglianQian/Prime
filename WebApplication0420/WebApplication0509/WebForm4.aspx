@@ -16,8 +16,9 @@
                 type: 'Post',
                 data: "{'s1':'2015-03-25','s2':'2015-03-26'}",
                 datatype: 'json',
-                contentType:"application/json",
+                //contentType:"application/json",
                 success: function (result) {
+                    console.log(result.d);
                     var result1 = eval("(" + result.d + ")");
                     var line = new Morris.Line({
                         element: 'myfirstchart',

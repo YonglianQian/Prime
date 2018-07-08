@@ -23,47 +23,38 @@ Partial Public Class WebForm1
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''ScriptManager1 控件。
+    '''GridView1 控件。
     '''</summary>
     '''<remarks>
     '''自动生成的字段。
     '''若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
     '''</remarks>
-    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
-    '''LblAddFoods 控件。
+    '''SqlDataSource1 控件。
     '''</summary>
     '''<remarks>
     '''自动生成的字段。
     '''若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
     '''</remarks>
-    Protected WithEvents LblAddFoods As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''DropDownList1 控件。
+    '''TextBox1 控件。
     '''</summary>
     '''<remarks>
     '''自动生成的字段。
     '''若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
     '''</remarks>
-    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''txtFoodSearch 控件。
+    '''TextBox2 控件。
     '''</summary>
     '''<remarks>
     '''自动生成的字段。
     '''若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
     '''</remarks>
-    Protected WithEvents txtFoodSearch As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''aceFoodSearch 控件。
-    '''</summary>
-    '''<remarks>
-    '''自动生成的字段。
-    '''若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    '''</remarks>
-    Protected WithEvents aceFoodSearch As Global.AjaxControlToolkit.AutoCompleteExtender
+    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
 End Class

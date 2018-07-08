@@ -77,6 +77,7 @@
     <Content Include="WebForm10.aspx" />
     <Content Include="WebForm11.aspx" />
     <Content Include="WebForm13.aspx" />
+    <Content Include="WebForm14.aspx" />
     <Content Include="WebForm8.aspx" />
     <Content Include="WebForm9.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -140,6 +141,13 @@
     </Compile>
     <Compile Include="WebForm13.aspx.designer.cs">
       <DependentUpon>WebForm13.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm14.aspx.cs">
+      <DependentUpon>WebForm14.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm14.aspx.designer.cs">
+      <DependentUpon>WebForm14.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
