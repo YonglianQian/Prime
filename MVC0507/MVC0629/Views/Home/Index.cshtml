@@ -15,16 +15,23 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready(function () {
+
             $('#table1').DataTable({
-                //"processing" : true,//显示“处理中...” 
-                //"serverSide" : true,//开启服务器模式。 
+                "processing" : true,//显示“处理中...”
+                "serverSide" : true,//开启服务器模式。
                 "ajax": {
                     "url": "/Home/GetData",
-                    "type":"Get"
+                    "type": "Get",
+                    //here assign json result to be displayed.
+                    "dataSrc": ""
                 },
-                "sAjaxDataProp": "",
+                //we could also follow this way.
+                //"sAjaxDataProp": "",
+                
                 "columns": [
-                    { "data": "Id" },
+                    {
+                        "data": "Id",
+                    },
                     { "data": "Name" },
                     { "data": "Price" },
                 ]
@@ -34,7 +41,7 @@
 
 </head>
 <body>
-    <div> 
+    <div>
         <table id="table1" class="display">
             <thead>
                 <tr>

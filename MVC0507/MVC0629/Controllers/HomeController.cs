@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC0629.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,11 +11,13 @@ namespace MVC0629.Controllers
     {
         public JsonResult GetData()
         {
-            List<Product> products = new List<Product>()
-            {
-                new Product{Id=1,Name="Apple",Price=11 },
-                new Product{Id=2,Name="Pear",Price=12 }
-            };
+            DataStoreEntities entities = new DataStoreEntities();
+            List<Product> products = entities.Products.ToList();
+            //List<Product> products = new List<Product>()
+            //{
+            //    new Product{Id=1,Name="Apple",Price=11 },
+            //    new Product{Id=2,Name="Pear",Price=12 }
+            //};
             return Json(products, JsonRequestBehavior.AllowGet);
         }
         // GET: Home
@@ -23,11 +26,11 @@ namespace MVC0629.Controllers
             return View();
         }
     }
-    public class Product
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Price { get; set; }
+    //public class Product
+    //{
+    //    public int Id { get; set; }
+    //    public string Name { get; set; }
+    //    public int Price { get; set; }
 
-    }
+    //}
 }
