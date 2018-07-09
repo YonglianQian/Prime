@@ -116,7 +116,7 @@
 
     <script type="text/javascript" language="javascript">
     Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler1);
-    Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler1);
+    Sys.WebForms.PageRequestManager.getInstance().add_pageLoading(pageLoadingHandler1);
 
     var thebutton;
     var postBackElement;
@@ -142,14 +142,18 @@
          thebutton.disabled = true;
     }
 
-    function EndRequestHandler1(sender, args)
-    {
-        if (thebutton.id === "Button1") $get('UpdateProgress1').style.display = 'none';
+        function pageLoadingHandler1(sender, args){
+              if (thebutton.id === "Button1") $get('UpdateProgress1').style.display = 'none';
         if (thebutton.id === "Button2") $get('UpdateProgress2').style.display = 'none';
          thebutton.disabled = false;
          var str = thebutton.id;
          if(document.getElementById("Button" + (parseInt(str.substring(6, str.length)) + 1)))
              document.getElementById("Button" + (parseInt(str.substring(6, str.length)) + 1)).click();
+
+        }
+    function EndRequestHandler1(sender, args)
+    {
+      
     }
     </script>
 

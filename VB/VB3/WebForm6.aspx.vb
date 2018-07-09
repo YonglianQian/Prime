@@ -8,4 +8,8 @@
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Threading.Thread.Sleep(3000)
     End Sub
+
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Threading.Thread.Sleep(3000)
+    End Sub
 End Class
