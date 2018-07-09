@@ -105,6 +105,7 @@
     <Content Include="WebForm3.aspx" />
     <Content Include="WebForm4.aspx" />
     <Content Include="WebForm5.aspx" />
+    <Content Include="WebForm6.aspx" />
     <Content Include="WebService1.asmx" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,13 @@
     </Compile>
     <Compile Include="WebForm5.aspx.vb">
       <DependentUpon>WebForm5.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm6.aspx.designer.vb">
+      <DependentUpon>WebForm6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm6.aspx.vb">
+      <DependentUpon>WebForm6.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="WebService1.asmx.vb">

@@ -12,7 +12,6 @@
     Protected Shared Comp As String
 
     Public NotInheritable Class Utils2
-        ' sealed to ensure the utility class won't be inherited
         Private Sub New()
         End Sub
 
@@ -23,59 +22,13 @@
     End Class
 
     Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-        'Capacitors
-        Comp = "Capacitors"
-
-        Dim sqlConnection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("conCString1").ConnectionString)
-        Dim ConnString As String = Utils2.GetConnString()
-        Dim querystring As String = String.Empty
-
-        querystring = "DELETE * FROM [Capacitors]"
-        Using conn As New OleDbConnection(ConnString)
-            Using cmd1 As New OleDbCommand(querystring, conn)
-                cmd1.CommandType = CommandType.Text
-                conn.Open()
-                cmd1.ExecuteNonQuery()  'delete capacitors
-            End Using
-            conn.Close()
-        End Using
-
-        Dim cmd As New SqlCommand
-        cmd.CommandType = CommandType.Text
-        cmd.Connection = sqlConnection
-
-        ----CODE REMOVED FOR BREVITY----
-
-        Label1.Text = Cap & " Capacitors exported at " & DateTime.Now.ToString()
+        Threading.Thread.Sleep(3000)
 
     End Sub
 
     Protected Sub Button2_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-        ' Introducing delay for demonstration.
-        Comp = "Connectors"
-        UpdatePanel2.Update()
-        Dim sqlConnection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("conCString1").ConnectionString)
-        Dim ConnString As String = Utils2.GetConnString()
+        Threading.Thread.Sleep(3000)
 
-        Dim querystring As String = String.Empty
-
-        querystring = "DELETE * FROM [Connectors]"
-        Using conn As New OleDbConnection(ConnString)
-            Using cmd1 As New OleDbCommand(querystring, conn)
-                cmd1.CommandType = CommandType.Text
-                conn.Open()
-                cmd1.ExecuteNonQuery()  'delete connectors
-            End Using
-            conn.Close()
-        End Using
-
-        Dim cmd As New SqlCommand
-        cmd.CommandType = CommandType.Text
-        cmd.Connection = sqlConnection
-
-        ----CODE REMOVED FOR BREVITY----
-
-        Label2.Text = Con & " Connectors exported at " & DateTime.Now.ToString()    '237 at test
 
     End Sub
 
@@ -154,6 +107,7 @@
                         </asp:UpdateProgress>
                     </fieldset>
                 </ContentTemplate>
+
             </asp:UpdatePanel>
 
             <br />
@@ -161,30 +115,42 @@
     </form>
 
     <script type="text/javascript" language="javascript">
-        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler1);
-        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler1);
+    Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler1);
+    Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler1);
 
-        var thebutton;
-        function BeginRequestHandler1(sender, args) {
-            thebutton = args.get_postBackElement();
-            //alert(thebutton.id)
-            if (thebutton.id === "Button1") $get('UpdateProgress1').style.display = 'block';
-            if (thebutton.id === "Button2") $get('UpdateProgress2').style.display = 'block';
-            thebutton = args.get_postBackElement();
-            //alert("ID: " + thebutton.id);
-            thebutton.disabled = true;
-        }
-        function EndRequestHandler1(sender, args) {
-            if (thebutton.id === "Button1") $get('UpdateProgress1').style.display = 'none';
-            if (thebutton.id === "Button2") $get('UpdateProgress2').style.display = 'none';
-            thebutton.disabled = false;
-            var str = thebutton.id;
-            //alert("Str: " + str);
-            if (document.getElementById("Button" + (parseInt(str.substring(6, str.length)) + 1)))
-                document.getElementById("Button" + (parseInt(str.substring(6, str.length)) + 1)).click();
-            //alert("Mod: " + "Button" + (parseInt(str.substring(6, str.length)) + 1));
-        }
+    var thebutton;
+    var postBackElement;
 
+    function InitializeRequest(sender, args) {
+
+        postBackElement = args.get_postBackElement();
+        if (postBackElement.id == 'Button1') {
+            $get('UpdateProgress1').style.display = 'block';
+        }
+        if (postBackElement.id == 'Button2') {
+            $get('UpdateProgress2').style.display = 'block';
+        }
+    }
+
+    function BeginRequestHandler1(sender, args)
+    {
+        thebutton = args.get_postBackElement();
+        if (thebutton.id === "Button1") $get('UpdateProgress1').style.display = 'block';
+        if (thebutton.id === "Button2") $get('UpdateProgress2').style.display = 'block';
+         thebutton = args.get_postBackElement();
+         alert("ID: " + thebutton.id);
+         thebutton.disabled = true;
+    }
+
+    function EndRequestHandler1(sender, args)
+    {
+        if (thebutton.id === "Button1") $get('UpdateProgress1').style.display = 'none';
+        if (thebutton.id === "Button2") $get('UpdateProgress2').style.display = 'none';
+         thebutton.disabled = false;
+         var str = thebutton.id;
+         if(document.getElementById("Button" + (parseInt(str.substring(6, str.length)) + 1)))
+             document.getElementById("Button" + (parseInt(str.substring(6, str.length)) + 1)).click();
+    }
     </script>
 
 </body>
