@@ -47,7 +47,7 @@
 
     <form id="form1" runat="server">
         <div>
-            <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="0">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="0" EnablePartialRendering="true">
             </asp:ScriptManager>
 
             <p style="font-family: 'Arial Black'; font-size: medium; font-weight: bold; font-style: normal">
@@ -64,11 +64,10 @@
             &nbsp;
         <asp:Label ID="Label13" runat="server" Text="Connectors"></asp:Label>
 
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server" style="width: 750px;" UpdateMode="Conditional">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" style="width: 750px;" UpdateMode="Conditional" ChildrenAsTriggers="false">
                 <ContentTemplate>
                     <fieldset style="width: 750px;">
-                        <asp:Button ID="Button1" runat="server" Text="Export" OnClick="Button1_Click" Style="width: 56px" />
-                        &nbsp;        
+                         <asp:linkButton ID="Button1" runat="server" Text="Export" OnClick="Button1_Click" Style="width: 56px" />
                 <asp:Label ID="Label1" runat="server" Text="Capacitors"></asp:Label>
                         &nbsp;
                     <div style="display: inline-block">
@@ -90,7 +89,8 @@
             <asp:UpdatePanel ID="UpdatePanel2" runat="server" style="width: 750px;" UpdateMode="Conditional">
                 <ContentTemplate>
                     <fieldset style="width: 750px;">
-                        <asp:Button ID="Button2" runat="server" Text="Export" OnClick="Button2_Click" Style="width: 56px" />
+                         <asp:linkButton ID="Button2" runat="server" Text="Export" OnClick="Button2_Click" Style="width: 56px" />
+
                         &nbsp;              
                 <asp:Label ID="Label2" runat="server" Text="Connectors"></asp:Label>
                         &nbsp;

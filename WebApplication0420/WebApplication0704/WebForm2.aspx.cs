@@ -13,5 +13,17 @@ namespace WebApplication0704
         {
 
         }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType==DataControlRowType.DataRow)
+            {
+                ImageButton ib = e.Row.FindControl("ImageButton1") as ImageButton;
+                if (!ib.Enabled)
+                {
+                    ib.ToolTip = "Your String";
+                }
+            }
+        }
     }
 }

@@ -25,11 +25,32 @@ namespace MVC0629.Controllers
         {
             return View();
         }
+        public PartialViewResult filterresult(int? id)
+        {
+            List<Product> products = new List<Product>()
+            {
+                new Product{ID=1,Name="Apple",Price=12 },
+                new Product{ID=2,Name="Grape",Price=13 },
+                new Product{ID=3,Name="Pear",Price=16 }
+            };
+            if (id != null)
+            {
+                products = products.Where(x => x.ID == id).ToList();
+            }
+            ViewBag.result = products;
+            return PartialView("filterresult", products);
+        }
+        public ActionResult About()
+        {
+            List<Product> products = new List<Product>()
+            {
+                new Product{ID=1,Name="Apple",Price=23 },
+                new Product{ID=2,Name="Berry",Price=25 },
+                new Product{ID=3,Name="Apricot",Price=28 }
+            };
+            ViewBag.result = products;
+            return View(products);
+        }
     }
-    //public class Product
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //    public int Price { get; set; }
-    //}
+
 }

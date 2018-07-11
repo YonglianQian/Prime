@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MVC0629.Models.Product>
+
+
+<h3>My WebGrid</h3>
+@{
+
+                var grid = new WebGrid(ViewBag.result, defaultSort: "Name");
+}
+
+@grid.GetHtml(columns:grid.Columns(grid.Column("Name"),
+    grid.Column("Price",header:"List Price")))

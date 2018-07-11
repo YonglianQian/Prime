@@ -10,18 +10,19 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div>
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
-                    <asp:TextBox runat="server"></asp:TextBox>
-                    <br />
-                    <asp:Button ID="Button1" runat="server" Text="Button" />
-                </ContentTemplate>
-            </asp:UpdatePanel>
-                    <asp:TextBox runat="server"></asp:TextBox>
-                    <br />
-                    <asp:Button ID="Button2" runat="server" Text="Button" />
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" OnRowDataBound="GridView1_RowDataBound">
+               <Columns>
+                   <asp:TemplateField>
+                       <ItemTemplate>
+                           <asp:ImageButton ID="ImageButton1" runat="server" />
+                       </ItemTemplate>
+                       <ItemStyle BackColor="YellowGreen" Width="80px" />
+                       <HeaderStyle BackColor="PaleVioletRed" Width="80px" />
+                   </asp:TemplateField>
+               </Columns>
+            </asp:GridView>
+              
         </div>
     </form>
 </body>

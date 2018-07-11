@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -10,40 +9,30 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
     <script src="~/Scripts/jquery-1.12.4.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#table1').DataTable({
-                //"processing" : true, 
-                //"serverSide" : true,
-                "ajax": {
-                    "url": "/Home/GetData",
-                    "type":"Get"
-                },
-                "sAjaxDataProp": "",
-                "columns": [
-                    { "data": "ID" },
-                    { "data": "Name" },
-                    { "data": "Price" },
-                ]
-            });
-        });
-    </script>
 
 </head>
 <body>
-    <div> 
-        <table id="table1" class="display">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-        </table>
+    <input type="text" id="searchtext"/>
+    <button id="button1" onclick="search()">Search</button>
+    <div id="header"> 
+        @Html.Action("filterresult", "Home")
     </div>
+    <hr />
+    <h2>After PartialView</h2>
+    <script>
+        function search() {
+            debugger;
+            $.ajax({
+                type: "Post",
+                url: '@Url.Action("filterresult","Home")',
+                data: {id:$("#searchtext").val()},
+                datatype: "json",
+                success: function (data) {
+                    debugger;
+                    $("#header").html(data);
+                }
+            })
+        }
+    </script>
 </body>
 </html>
