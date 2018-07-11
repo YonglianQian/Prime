@@ -13,20 +13,15 @@ class Program
 
     static void Main(string[] args)
     {
-        object o = null;
-        Console.WriteLine(o??"0");
-        
-        Console.WriteLine(Math.Round(1.4).ToString("0.00"));
-        Console.WriteLine(Math.Round(1.6).ToString("0.00"));
-        Console.WriteLine(String.Format("{0:F}", Math.Round(1.5)));
-    
-        Console.ReadKey();
-        
+        List<string> student1 = new List<string> { "RoleNo1", "RoleNo5", "RoleNo3" };
+        List<string> student2 = new List<string> { "RoleNo2", "RoleNo4" };
+        List<string> finalStudentOrder = student1.Concat(student2).OrderBy(x => x.Substring(x.Length - 1, 1)).ToList();
+        foreach (var item in finalStudentOrder)
+        {
+            Console.WriteLine(item);
+        }
 
     }
-
-    
-
 }
 public class Product
 {
