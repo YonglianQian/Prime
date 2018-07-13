@@ -19,15 +19,15 @@ namespace WebApplication0704
             DataStoreEntities dataStoreEntities = new DataStoreEntities();
             return dataStoreEntities.Products.ToList();
         }
-        //public void UpdateProduct(int id,string name,int price)
-        //{
-        //    DataStoreEntities entities = new DataStoreEntities();
-        //    var product = entities.Products.FirstOrDefault(x => x.Id == id);
-        //    product.Name = name;
-        //    product.Price = price;
-        //    entities.SaveChanges();
+        public void UpdateProduct(int id, string name, int price)
+        {
+            DataStoreEntities entities = new DataStoreEntities();
+            var product = entities.Products.FirstOrDefault(x => x.Id == id);
+            product.Name = name;
+            product.Price = price;
+            entities.SaveChanges();
 
-        //}
-        
+        }
+
     }
 }
