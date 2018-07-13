@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -7,28 +8,32 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 
 class Program
 {
 
     static void Main(string[] args)
     {
-        List<string> student1 = new List<string> { "RoleNo1", "RoleNo5", "RoleNo3" };
-        List<string> student2 = new List<string> { "RoleNo2", "RoleNo4" };
-        List<string> finalStudentOrder = student1.Concat(student2).OrderBy(x => x.Substring(x.Length - 1, 1)).ToList();
-        foreach (var item in finalStudentOrder)
-        {
-            Console.WriteLine(item);
-        }
+  
+        
 
     }
+    
 }
-public class Product
+public class Person
 {
-    public int ID { get; set; }
-    public string Name { get; set; }
-    public int Price { get; set; }
-
+    public string first_name { get; set; }
+    public string last_name { get; set; }
+    public string employeeID { get; set; }
+    public Position[] positions { get; set; }
+}
+public class Position
+{
+    public string position_id { get; set; }
+    public string job_title { get; set; }
+    public string team { get; set; }
+    public Person manager { get; set; }
 }
 
 
