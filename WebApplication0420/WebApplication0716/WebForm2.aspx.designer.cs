@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication0704 {
+namespace WebApplication0716 {
     
     
-    public partial class WebForm4 {
+    public partial class WebForm2 {
         
         /// <summary>
         /// form1 control.
@@ -29,14 +29,5 @@ namespace WebApplication0704 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView ListView1;
-        
-        /// <summary>
-        /// ObjectDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
     }
 }

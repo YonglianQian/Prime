@@ -16,7 +16,7 @@ namespace WebApplication0604
             if (!IsPostBack)
             {
                 this.ListView1.DataSource = GetDataTable();
-                this.ListView1.DataBind(); 
+                this.ListView1.DataBind();
             }
 
         }
@@ -61,7 +61,11 @@ namespace WebApplication0604
                 string Price = price.Text;
                 SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DataStore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "update Products Set Name='"+Name+"',Price="+Price+" where Id="+id;
+                command.CommandText = "update Products Set Name=@Name,Price=@Price where Id=@id";
+                command.Parameters.AddWithValue("@Name", Name);
+                command.Parameters.AddWithValue("@Price", Price);
+                command.Parameters.AddWithValue("@id", id);
+
                 
                 command.CommandType = CommandType.Text;
                 command.Connection = connection;
