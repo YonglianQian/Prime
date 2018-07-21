@@ -17,7 +17,7 @@
                                 <asp:Label ID="Label2" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
                             </td>
                             <td>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Handle(Eval("Price"),Eval("Price")) %>'></asp:Label>
                             </td>
                         </tr>
                 </ItemTemplate>

@@ -17,9 +17,9 @@ namespace WebApplication0621
         {
             if (!IsPostBack)
             {
-                GridView1.DataSource = GetDataSet();
-                GridView1.DataBind();
                 ViewState["sortdirection"] = "ASC";
+                Session["LastSort"] = "Id ASC";
+                Sort();
             }
         }
         protected DataSet GetDataSet()
@@ -33,27 +33,34 @@ namespace WebApplication0621
         {
             if (GetDataSet()!=null)
             {
-                DataView dv = new DataView(GetDataSet().Tables[0]);
                 if (ViewState["sortdirection"].ToString()=="ASC")
                 {
-                    dv.Sort = e.SortExpression + " DESC";
                     ViewState["sortdirection"] = "DESC";
+                    Session["LastSort"]= e.SortExpression + " "+ViewState["sortdirection"];
                 }
                 else
                 {
-                    dv.Sort = e.SortExpression + " ASC";
                     ViewState["sortdirection"] = "ASC";
+                    Session["LastSort"]= e.SortExpression + " "+ViewState["sortdirection"];
 
                 }
-                GridView1.DataSource = dv;
-                GridView1.DataBind();
+                Sort();
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             this.GridView1.PageIndex = e.NewPageIndex;
-            this.GridView1.DataSource = GetDataSet();
-            this.GridView1.DataBind();
+            Sort();
+        }
+        public void Sort()
+        {
+            if (GetDataSet()!=null)
+            {
+                DataView dv = new DataView(GetDataSet().Tables[0]);
+                dv.Sort = Session["LastSort"].ToString();
+                GridView1.DataSource = dv;
+                GridView1.DataBind();
+            }
         }
     }
 }

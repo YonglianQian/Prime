@@ -13,5 +13,14 @@ namespace WebApplication0704
         {
 
         }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            this.TextBox1.Enabled = true;
+        }
     }
 }

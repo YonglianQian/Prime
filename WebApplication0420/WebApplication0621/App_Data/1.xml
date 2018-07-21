@@ -33,22 +33,22 @@
   <Table>
     <Id>2004</Id>
     <Name>BlueBerry</Name>
-    <Price>18</Price>
+    <Price>32</Price>
   </Table>
   <Table>
     <Id>2006</Id>
     <Name>Watermelon</Name>
-    <Price>9</Price>
+    <Price>19</Price>
   </Table>
   <Table>
     <Id>2007</Id>
     <Name>Waxberry</Name>
-    <Price>21</Price>
+    <Price>39</Price>
   </Table>
   <Table>
     <Id>2008</Id>
     <Name>Pineapple</Name>
-    <Price>18</Price>
+    <Price>17</Price>
   </Table>
   <Table>
     <Id>2009</Id>

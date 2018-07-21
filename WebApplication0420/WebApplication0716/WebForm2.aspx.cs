@@ -28,5 +28,10 @@ namespace WebApplication0716
             dt.Columns.AddRange(new DataColumn[] { new DataColumn("Id"), new DataColumn("Name"), new DataColumn("Price") });
             return dt;           
         }
+        //Tostring method is executed by default
+        protected int Handle(object o1,object o2)
+        {
+            return Convert.ToInt32(o1) * Convert.ToInt32(o2);
+        }
     }
 }
