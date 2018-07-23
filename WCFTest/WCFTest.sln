@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{20C275F0-34C3-47B4-90E3-05CD5999D10F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{6B3821D5-9A95-443D-86D9-7EDA0A97BB30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationClient0723", "SerializationClient0723\SerializationClient0723.csproj", "{AF0E775F-CC4E-40E7-80E2-1B7A4238892D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{20C275F0-34C3-47B4-90E3-05CD5999D10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20C275F0-34C3-47B4-90E3-05CD5999D10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20C275F0-34C3-47B4-90E3-05CD5999D10F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B3821D5-9A95-443D-86D9-7EDA0A97BB30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B3821D5-9A95-443D-86D9-7EDA0A97BB30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B3821D5-9A95-443D-86D9-7EDA0A97BB30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B3821D5-9A95-443D-86D9-7EDA0A97BB30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF0E775F-CC4E-40E7-80E2-1B7A4238892D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0E775F-CC4E-40E7-80E2-1B7A4238892D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0E775F-CC4E-40E7-80E2-1B7A4238892D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0E775F-CC4E-40E7-80E2-1B7A4238892D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

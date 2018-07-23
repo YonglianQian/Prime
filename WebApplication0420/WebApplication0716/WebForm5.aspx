@@ -15,7 +15,7 @@
                     <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
                     <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                     <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                    <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True"/>
+                    <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" CausesValidation="false"/>
                 </Fields>
             </asp:DetailsView>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DataStore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" DeleteCommand="DELETE FROM [Products] WHERE [Id] = @original_Id AND [Name] = @original_Name AND [Price] = @original_Price" InsertCommand="INSERT INTO [Products] ([Name], [Price]) VALUES (@Name, @Price)" OldValuesParameterFormatString="original_{0}" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Id], [Name], [Price] FROM [Products] WHERE ([Id] = @Id)" UpdateCommand="UPDATE [Products] SET [Name] = @Name, [Price] = @Price WHERE [Id] = @original_Id AND [Name] = @original_Name AND [Price] = @original_Price">

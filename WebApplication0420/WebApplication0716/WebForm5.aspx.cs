@@ -25,6 +25,7 @@ namespace WebApplication0716
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
             command.CommandText = "select * from Products";
+
             SqlDataAdapter sda = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             sda.Fill(dt);
