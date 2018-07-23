@@ -16,15 +16,10 @@ namespace SelfHost
             ServiceHost selfHost=new ServiceHost(typeof(Service1),baseAddress);
             try
             {
-                
-               
-                selfHost.AddServiceEndpoint(typeof(IService), new BasicHttpBinding(), "MyService1");
-
-
+                selfHost.AddServiceEndpoint(typeof(IService), new WSHttpBinding(), "MyService1");
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
                 smb.HttpGetEnabled = true;
                 selfHost.Description.Behaviors.Add(smb);
-
                 selfHost.Open();
                 Console.WriteLine("The Service is Ready.");
                 Console.WriteLine("Press <enter> to termiate service");

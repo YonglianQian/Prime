@@ -47,6 +47,7 @@ namespace ListViewAndEF
                 {
                     picture.PhotoAlbumId = photoAlbumId;
 
+
                     string virtualFolder = "~/Pictures/";
                     string physicalFolder = Server.MapPath(virtualFolder);
                     string filename = Guid.NewGuid().ToString();

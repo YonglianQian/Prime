@@ -7,17 +7,15 @@ using System.Threading.Tasks;
 
 namespace SelfHost
 {
-    [ServiceContract(Namespace = "mydemo",Name ="demo")]
+    [ServiceContract(Namespace = "http://hehe")]
     public interface IService
     {
+       
         [OperationContract]
         double AddOperation(double num1, double num2);
         [OperationContract]
         double SubOperation(double num1, double num2);
 
-        [OperationContract(Name ="add",Action ="add2")]
-        int Add(int a, int b);
-        void work(int x, int y);
 
     }
 }
