@@ -10,7 +10,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <h2>WebForm1</h2>
         <div>
+            
             <asp:Chart ID="Chart1" runat="server">
                 <Series>
                     <asp:Series Name="Series1" ChartType="Spline"></asp:Series>
