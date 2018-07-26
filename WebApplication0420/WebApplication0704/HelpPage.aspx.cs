@@ -19,7 +19,8 @@ namespace WebApplication0704
             connection.Open();
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "select Img from Images";
+            command.CommandText = "select Img from Images where Id=@id";
+            command.Parameters.AddWithValue("@id", id);
             SqlDataReader sdr = command.ExecuteReader();
             if (sdr.Read())
             {
