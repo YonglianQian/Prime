@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication0723
 {
-    public partial class WebForm4 : System.Web.UI.Page
+    public partial class WebForm5 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Right.Attributes.Add("src", "/WebForm1.aspx");
-        }
 
+        }
     }
 }
