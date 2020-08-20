@@ -17,9 +17,11 @@
                 data: '',
                 dataType: 'json',
                 success: function (d) {
+                    debugger;
                     data = d.d;
                 }
             }).done(function () {
+                debugger;
                 $.each(data, function (i, o) {
                     
                     $("#main").append("Name: " + o["Name"] + "<br>");
